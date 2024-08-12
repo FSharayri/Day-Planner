@@ -1,0 +1,9 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h1>User Index</h1>
+<% users.forEach(u => { %>
+  <h4><a href="/users/<%= u._id %>"><%= u.username %></a></h4>
+<% }) %>
+
+<%- include('../partials/footer') %>
