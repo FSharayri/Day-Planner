@@ -8,10 +8,14 @@ const router = Router()
 router.get('/', isSignedIn, tasksCtrl.index)
 router.get('/new', isSignedIn, tasksCtrl.new)
 
+
+
+
 //create new task -protected
 router.post('/', isSignedIn, tasksCtrl.create)
 
-
+//delete task -protected 
+router.delete('/:taskId', isSignedIn, tasksCtrl.delete)
 
 
 
