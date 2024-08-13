@@ -36,17 +36,17 @@ async function create(req,res){
     res.redirect('/tasks')
   }
 }
-// async function show(req, res) {
-//   try {
-//     const selectedUser = await User.findById(req.params.userId)
-//     res.render('users/show', {
-//       selectedUser
-//     })
-//   } catch (error) {
-//     console.log(error)
-//     res.redirect('/')
-//   }
-// }
+async function show(req, res) {
+  try {
+    const task = await Task.findById(req.params.taskId)
+    res.render('tasks/show', {
+      task, title: "Task Details"
+    })
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+}
 
 
 async function deleteTask(req,res){
@@ -103,5 +103,6 @@ export {
   deleteTask as delete,
   edit,
   update,
+  show,
 
 }

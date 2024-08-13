@@ -7,6 +7,7 @@ const router = Router()
 // protected routes
 router.get('/', isSignedIn, tasksCtrl.index)
 router.get('/new', isSignedIn, tasksCtrl.new)
+router.get('/:taskId', isSignedIn, tasksCtrl.show)
 
 
 
