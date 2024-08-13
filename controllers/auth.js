@@ -8,7 +8,8 @@ function newSignUp(req, res) {
 async function signUp(req, res) {
   const userInDatabase = await User.findOne({ username: req.body.username })
   if (userInDatabase) {
-    return res.send('Username already taken.')
+    
+    return res.render('message', {message: "this username is taken"})
   }
   if (req.body.password !== req.body.confirmPassword) {
     return res.send('Password and Confirm Password must match')
