@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
-const tagSchema = new Schema({
+const catSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -21,8 +21,8 @@ const tagSchema = new Schema({
   }
 )
 
-const Task = mongoose.model("Task", taskSchema)
+const Cat = mongoose.model("Cat", catSchema)
 
 export {
-  Task
+  Cat
 }

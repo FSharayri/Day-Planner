@@ -1,9 +1,18 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/flights/index.css" />
 <%- include('../partials/nav') %>
 
-<h1>User Index</h1>
-<% users.forEach(u => { %>
-  <h4><a href="/users/<%= u._id %>"><%= u.username %></a></h4>
-<% }) %>
+<main>
+  <h1><%= title %></h1>
+  <a href="tasks/new"><h1>Add Project</h1></a>
+
+  <h1>Task List</h1>
+  <% tasks.forEach(task => { %>
+   <h1><%= task.title %></h1>
+   <h3><%= task.desc %></h3>
+   <h2> <% task.isCompleted? "Complete":"Incomplete" %></h2>
+   <h2><%= task.dueDate.toLocaleDateString().slice(0,16) %></h2>
+  <% }) %>
+</main>
 
 <%- include('../partials/footer') %>

@@ -12,7 +12,16 @@ const userSchema = new Schema({
     required: true,
     select: false
   },
-}, {
+tasks: {
+  type: [Schema.Types.ObjectId], 
+  ref: 'Task',
+},
+cats: {
+  type: [Schema.Types.ObjectId], 
+  ref: 'Cat',
+},
+},
+{
   timestamps: true
 })
 

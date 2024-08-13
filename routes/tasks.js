@@ -6,6 +6,12 @@ const router = Router()
 
 // protected routes
 router.get('/', isSignedIn, tasksCtrl.index)
+router.get('/new', isSignedIn, tasksCtrl.new)
+
+//create new task -protected
+router.post('/', isSignedIn, tasksCtrl.create)
+
+
 
 
 
