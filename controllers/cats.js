@@ -38,12 +38,26 @@ async function create(req,res){
   }
 }
 
+async function show(req, res) {
+  try {
+    const cat = await Cat.findById(req.params.catId)
+    const cats = await Cat.find({})
+    res.render('cats/show', {
+      cat,cats, title: "Categories"
+    })
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+}
+
 
 export {
   create,
   newCat as new,
   index,
-  
+  show,
+
 
 
 

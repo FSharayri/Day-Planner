@@ -2,18 +2,19 @@
 <link rel="stylesheet" href="/stylesheets/flights/index.css" />
 <%- include('../partials/nav') %>
 
+<nav>
+
+  <% cats.forEach(catTab => { %>
+    <div>
+          <a href="/cats/<%= catTab._id %>"><%= catTab.title %></a>
+    </div>
+  <% })%> 
+
+  <a href="cats/new"><h3>Add a Category</h3></a>
+
+</nav>
 <main>
- 
-  <nav>
-  <% cats.forEach(cat => { %>
-        <div>
-          <a href="/cats/<%= cat._id %>"><%= cat.title %></a>
-        </div>
-        <% })%> 
-        <a href="cats/new"><h3>Add a Category</h3></a>
-    </nav>
-    
-  
+
 </main>
 
 <%- include('../partials/footer') %>
