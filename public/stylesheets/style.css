@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Gugi&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 html {
   box-sizing: border-box
 }
@@ -16,23 +19,62 @@ in most browser configurations this will be 10px */
 :root {
   font-size: 62.5%;
 }
-
-body {
-  background-color: gray;
+nav {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px groove ;
+}
+body{
+  
+  background-color: rgb(43, 43, 43);
+  color: aliceblue;
   /* Use a system font, if none are available use an available sans-serif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
-}
-
-nav {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
 }
-
 form.auth {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+}
+#landing-message{
+  
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 200%;
+}
+
+#main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6vh;
+  align-items: center;
+  text-align: center;
+}
+
+
+#buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 80px;
+
+}
+button{ 
+  color: rgb(255, 255, 255);
+  background-color: rgb(85, 3, 162);
+  border: none;
+  cursor:pointer;
 }

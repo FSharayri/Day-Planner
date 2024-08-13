@@ -1,15 +1,23 @@
+<%- include('../partials/footer') %>
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/sign-in.css">
 <%- include('../partials/nav') %>
 
 <form class="auth" action="/auth/sign-up" method="POST">
-  <h1>Create a new account!</h1>
-  <label for="username">Username:</label>
-  <input type="text" name="username" id="username" />
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" />
-  <label for="confirmPassword">Confirm Password:</label>
+
+  <h1 id="sign-in">Create a new account!</h1>
+
+  <label for="username" id="username-label">Username:</label>
+  <input type="text" name="username" id="username"/>
+
+  <label for="password" id="username-label">Password:</label>
+  <input type="password" name="password" id="password"/>
+
+  <label for="confirmPassword" id="username-label">Confirm Password:</label>
   <input type="password" name="confirmPassword" id="confirmPassword" />
-  <button type="submit">Sign up</button>
+
+  <button type="submit"><h1>Sign in</h1></button>
 </form>
+<a href="/index/"></a><button ><h3>Back</h3></button>
 
 <%- include('../partials/footer') %>

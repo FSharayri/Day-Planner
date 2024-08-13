@@ -1,0 +1,17 @@
+#sign-in{
+  font-weight: 500;
+  font-size: 60px;
+}
+
+#username-label {
+font-weight: 300;
+font-size: 45px;
+}
+#username, #password, #confirmPassword{
+width: 35vw;
+height: 6vh;
+padding: 20px;
+}
+button{
+  margin: 20px;
+}

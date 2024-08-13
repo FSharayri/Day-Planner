@@ -1,3 +1,16 @@
 <%- include('./partials/html-head') %>
+<link rel="stylesheet" href="stylesheets/index.css">
 <%- include('./partials/nav') %>
+<div id="main">
+  <div id="landing-message" >
+    <h1 style="font-weight: 300;font-size: 60px;">Sign up or Sign in to get started</h1>
+    <h2 style="font-weight: 200;">plan your day-to-day tasks with ease and track you're workspace</h2>
+    <h4 style="font-weight: 100;">To keep your Planner safe from public, you need to Sign-in, or Sign-up to create a new account</h4>
+  </div>
+  <div id="buttons">
+    <div><a href="/auth/sign-in"><button><h1>Sign in</h1></button></a></div>
+    <div><a href="/auth/sign-up"><button><h1>Sign up</h1></button></a></div>
+  </div>
+</div>
+
 <%- include('./partials/footer') %>
