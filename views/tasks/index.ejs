@@ -10,9 +10,10 @@
   <% tasks.forEach(task => { %>
    <h1><a href="tasks/<%= task._id %>"><%= task.title %></a>  
    <h3><%= task.desc %></h3>
-   <h2> <% task.isComplete? "Complete":"Incomplete" %> </h2>
+   <h2> <%= task.isComplete? "Complete":"Incomplete" %> </h2>
    <h2><%= task.dueDate.toLocaleDateString() %></h2>
-   <a href="tasks/<%= task._id %>/edit">✏️</a> <form action="/tasks/<%= task._id %>?_method=DELETE" method="post"> <button type="submit">❌</button></form></h1>
+   <a href="/tasks/<%= task._id %>/edit">✏️</a> 
+   <form action="/tasks/<%= task._id %>?_method=DELETE" method="post"> <button type="submit">❌</button></form></h1>
   <% }) %>
 </main>
 
