@@ -12,7 +12,7 @@ async function signUp(req, res) {
     return res.render('message', {message: "this username is taken"})
   }
   if (req.body.password !== req.body.confirmPassword) {
-    return res.send('Password and Confirm Password must match')
+    return res.render('message', {message: "Password and Confirm Password must match"})
   }
   const hashedPassword = bcrypt.hashSync(req.body.password, 10)
   req.body.password = hashedPassword
@@ -22,14 +22,13 @@ async function signUp(req, res) {
     _id: user._id
   }
   req.session.save(() => {
-    res.redirect('/')
+    res.redirect('/tasks')
   })
 }
 
 function newSignIn(req, res) {
   res.render('auth/sign-in')
 }
-
 async function signIn(req, res) {
   const userInDatabase = await User.findOne({ username: req.body.username }).select('+password')
   if (!userInDatabase) {
@@ -40,14 +39,14 @@ async function signIn(req, res) {
     userInDatabase.password
   )
   if (!validPassword) {
-    return res.send('Login failed. Please try again.')
+    return res.render('message', {message: "Login failed. Please try again."})
   }
   req.session.user = {
     username: userInDatabase.username,
     _id: userInDatabase._id
   }
   req.session.save(() => {
-    res.redirect('/')
+    res.redirect('/tasks')
   })
 }
 
