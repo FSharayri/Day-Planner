@@ -2,7 +2,7 @@ import { Task } from "../models/task.js"
 
 async function index(req, res) {
   try {
-    const users = await User.find({})
+    const tasks = await task.find({})
     res.render('users/index', {
       users
     })
