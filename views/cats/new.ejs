@@ -1,0 +1,15 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/flights/new.css">
+
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/cats" method="POST">
+    <label for="title-input">Title:</label>
+    <input type="text" name="title" id="title-input" required >
+    <button type="submit">Create Category</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

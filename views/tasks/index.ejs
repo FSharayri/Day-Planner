@@ -4,9 +4,9 @@
 
 <main>
   <h1><%= title %></h1>
-  <a href="tasks/new"><h1>Add Project</h1></a>
+  <a href="tasks/new"><h1>Add Task</h1></a>
 
-  <h1>Task List</h1>
+  
   <% tasks.forEach(task => { %>
    <h1><a href="tasks/<%= task._id %>"><%= task.title %></a>  
    <h3><%= task.desc %></h3>
