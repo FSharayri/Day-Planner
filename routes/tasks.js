@@ -16,8 +16,11 @@ router.post('/', isSignedIn, tasksCtrl.create)
 
 //delete task -protected 
 router.delete('/:taskId', isSignedIn, tasksCtrl.delete)
+// view edit task -protected
+router.get('/:taskId/edit', isSignedIn, tasksCtrl.edit)
 
-
+//edit task -protected 
+router.put('/:taskId', isSignedIn, tasksCtrl.update)
 
 
 export { router }
