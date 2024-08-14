@@ -82,7 +82,12 @@ async function edit(req,res){
   try{
     const task = await Task.findById(req.params.taskId)
     let date = new Date(task.dueDate - new Date().getTimezoneOffset() * 60000)
+    //give access to user only to modify
+    if (task.owner.equals(req.session.user._id)){
     res.render('tasks/edit', {task ,date, title : 'Edit Task'})
+    }else{
+      res.render('message' ,{message: "you don't have access to delete or modify this item"})
+    }
     }catch(err){
       console.log(err)
       res.redirect('/tasks')
