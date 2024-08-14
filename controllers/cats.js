@@ -4,7 +4,7 @@ import session from "express-session"
 
 async function index(req, res) {
   try {
-    const cats = await Cat.find({})
+    const cats = await Cat.find({owner : req.session.user._id})
     res.render('cats/index',  {cats, title:"Categories"})
   } catch (error) {
     console.log(error)
@@ -15,7 +15,6 @@ async function index(req, res) {
 
 async function newCat(req,res){
   try {
- 
     res.render('cats/new',  { title:"Create Category"})
   } catch (error) {
     console.log(error)
@@ -31,7 +30,7 @@ async function create(req,res){
     req.body.owner = req.session.user._id
     req.body.taskList = []
     const cat = await Cat.create(req.body)
-    const cats = await Cat.find({})
+    const cats = await Cat.find({owner : req.session.user._id})
     res.render('cats/index',  {cats, title:"Categories"})
   } catch (error) {
     console.log(error)
@@ -42,10 +41,14 @@ async function create(req,res){
 async function show(req, res) {
   try {
     const cat = await Cat.findById(req.params.catId).populate(['taskList'])
-    const cats = await Cat.find({})
+    const cats = await Cat.find({owner : req.session.user._id})
+    if (cat.owner.equals(req.session.user._id)){
     res.render('cats/show', {
       cat,cats, title: "Categories"
     })
+    }else{
+      res.render('message' ,{message: "you don't have access to this task"})
+    } 
   } catch (error) {
     console.log(error)
     res.redirect('/')
@@ -56,8 +59,12 @@ async function show(req, res) {
 async function addTask(req,res){
   try {
     const cat = await Cat.findById(req.params.catId)
-    const tasks = await Task.find({})
-    res.render('cats/add-task', {cat,tasks,title: `Add a Task to ${cat.title}`})
+    const tasks = await Task.find({owner : req.session.user._id})
+    if (cat.owner.equals(req.session.user._id)) {
+      res.render('cats/add-task', {cat,tasks,title: `Add a Task to ${cat.title}`})
+    }else{
+      res.render('message', {message: "you are not the owner of this category"})
+    }
   } catch (error) {
     console.log(error)
     res.redirect('/cats')
@@ -68,9 +75,14 @@ async function addTask(req,res){
 async function addTaskToCat(req,res){
   try {
     const cat = await Cat.findById(req.params.catId)
-    cat.taskList.push(req.params.taskId)
-    await cat.save()
-    res.redirect(`/cats/${cat._id}`)
+    const task = await Task.findById(req.params.taskId)
+    if (task.owner.equals(req.session.user._id) && cat.owner.equals(req.session.user._id)){
+      cat.taskList.push(req.params.taskId)
+      await cat.save()
+      res.redirect(`/cats/${cat._id}`)
+    }else{
+      res.render('message' ,{message: "you don't have access to this task"})
+    }
   } catch (error) {
     console.log(error)
     res.redirect('/cats')

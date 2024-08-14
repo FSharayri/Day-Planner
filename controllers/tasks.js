@@ -5,9 +5,6 @@ import session from "express-session"
 async function index(req, res) {
   try {
     const tasks = await Task.find({owner : req.session.user._id})
-    // const tasks = allTasks.filter(task => {
-    //   return task.owner.equals(req.session.user._id)
-    // })
     res.render('tasks/index',  {tasks, title:"Task List"})
   } catch (error) {
     console.log(error)
@@ -104,8 +101,7 @@ async function update(req,res){
     //give access to user only to modify
     if (task.owner.equals(req.session.user._id)){
       await task.updateOne(req.body)
-      const tasks = await Task.find({})
-      res.render('tasks/index',  {tasks, title:"Task List"})
+      res.redirect('/tasks')
     }
     else{
       res.render('message' ,{message: "you don't have access to delete or modify this item"})
@@ -118,12 +114,11 @@ async function update(req,res){
 }
 export {
   index,
-  // show,
+  show,
   newTask as new,
   create,
   deleteTask as delete,
   edit,
   update,
-  show,
 
 }
