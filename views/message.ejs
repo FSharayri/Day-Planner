@@ -1,12 +1,12 @@
 <%- include('./partials/html-head') %>
 <link rel="stylesheet" href="stylesheets/index.css">
-<%- include('./partials/nav') %>
+
 <div id="main">
   <div id="landing-message" >
     <h1 style="font-weight: 300;font-size: 60px;"><%= message %></h1>
     
  
-<a href="/" style="font-weight: 300;font-size: 60px; text-decoration: none;"><h1>Go Back</h1></a>
+<a href="javascript:history.back()" style="font-weight: 300;font-size: 60px; text-decoration: none;"><h1>Go Back</h1></a>
 </div>
 
 <%- include('./partials/footer') %>

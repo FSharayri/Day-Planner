@@ -77,9 +77,13 @@ async function addTaskToCat(req,res){
     const cat = await Cat.findById(req.params.catId)
     const task = await Task.findById(req.params.taskId)
     if (task.owner.equals(req.session.user._id) && cat.owner.equals(req.session.user._id)){
+      if (!cat.taskList.includes(req.params.taskId)){
       cat.taskList.push(req.params.taskId)
       await cat.save()
       res.redirect(`/cats/${cat._id}`)
+      }else{
+        res.render('message' ,{message: `this task is Already in ${cat.title},`, })
+      }
     }else{
       res.render('message' ,{message: "you don't have access to this task"})
     }
