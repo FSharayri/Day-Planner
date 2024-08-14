@@ -1,33 +1,33 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/flights/index.css" />
+<!-- <link rel="stylesheet" href="/stylesheets/flights/index.css" /> -->
 <%- include('../partials/nav') %>
 <nav>
-
   <% cats.forEach(catTab => { %>
-        <div>
-          <% if (catTab._id.equals(cat._id)) { %>
-            <a href="/cats/<%= catTab._id %>" style="background-color: bisque;"><%= catTab.title %></a>
-          <% } else { %>
-            <a href="/cats/<%= catTab._id %>"><%= catTab.title %></a>
-            <% }%> 
-        </div>
-        <% })%> 
-        <a href="cats/new"><h3>Add a Category</h3></a>
-    </nav>
+    <div>
+      <% if (catTab._id.equals(cat._id)) { %>
+        <a href="/cats/<%= catTab._id %>" style="background-color: bisque;"><%= catTab.title %></a>
+      <% } else { %>
+        <a href="/cats/<%= catTab._id %>"><%= catTab.title %></a>
+        <% }%> 
+    </div>
+  <% })%> 
+  <a href="/cats/new"><h3>Add a Category</h3></a>
+</nav>
+
 <main>
-  <% if (cat.taskList) { %>
-  
+  <a href="/cats/<%= cat._id %>/add-task"><h3>Add a task to this Category</h3></a>
+  <% if (cat.taskList.length) { %>
     <% cat.taskList.forEach(task => { %>
+      <h1><a href="/tasks/<%= task._id %>"><%= task.title %></a>  
+      <h3><%= task.desc %> ??</h3>
+      <h2> <%= task.isComplete? "Complete":"Incomplete" %> ??? </h2>
       
-      <h1><a href="tasks/<%= task._id %>"><%= task.title %></a>  
-      <h3><%= task.desc %></h3>
-      <h2> <%= task.isComplete? "Complete":"Incomplete" %> </h2>
-      <h2><%= task.dueDate.toLocaleDateString() %></h2>
       <a href="/tasks/<%= task._id %>/edit">✏️</a> 
       <form action="/tasks/<%= task._id %>?_method=DELETE" method="post"> <button type="submit">❌</button></form></h1>
     
     <% }) %>
   <% } %>
+
 </main>
 
 

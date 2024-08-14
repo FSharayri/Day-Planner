@@ -72,10 +72,11 @@ async function deleteTask(req,res){
 async function edit(req,res){
   try{
     const task = await Task.findById(req.params.taskId)
-    let date = new Date(task.dueDate - new Date().getTimezoneOffset() * 60000)
+    // let date = new Date(task.dueDate - new Date().getTimezoneOffset() * 60000)
+    let date = new Date()
     res.render('tasks/edit', {task ,date, title : 'Edit Task'})
     }catch(err){
-      console.log(error)
+      console.log(err)
       res.redirect('/tasks')
     }
 }

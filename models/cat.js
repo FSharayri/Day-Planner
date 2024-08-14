@@ -7,10 +7,10 @@ const catSchema = new Schema({
     type: String,
     required: true,
   },
-  taskList:{
+  taskList:[{
     type: Schema.Types.ObjectId, 
     ref: 'Task',
-  },
+  }],
   owner:{
     type: Schema.Types.ObjectId, 
     ref: 'User',
