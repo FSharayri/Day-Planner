@@ -10,23 +10,33 @@
 
 /* Style for the title */
 .navbar-title {
-  color: #EEF0F2;
-  font-size: 2.5em;
+  color: #846A6A;
+  font-size: 200%;
 }
 
 /* Style for the navigation links container */
 .navbar-links {
+  padding: 50px;
+  height: 100%;
+  justify-content: right;
+  width: 65%;
   display: flex;
   gap: 15px;
 }
 
 /* Style for individual navigation links */
 .navbar-link {
+  height: 100%;
+  width: 30%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
-  color: #fff;
+  color: #353b3c;
   padding: 10px 15px;
-  background-color: #275DAD;
-  border-radius: 5px;
+  background-color: #938284;
+  
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -36,6 +46,8 @@
 
 /* Style for the Sign Out button */
 .sign-out {
+  width: 15%;
+  height: 100%;
   background-color: #dc3545;
 }
 
