@@ -27,6 +27,19 @@
           <h2 class="task-status"> <%= task.isComplete? "Complete":"Incomplete" %></h2>
         </div>
         <div class="task-actions">
+        
+          <form action="/cats/<%=cat._id%>/move-task/<%=task._id%>?_method=put" method="post">
+            <button type="submit">Move to: </button>
+            <select name="catId" id="cat-select">
+              <% cats.forEach(catTab => { %>
+              <option value="<%= catTab._id %>" <%= catTab._id.equals(cat._id)? 'selected':''%>>
+                <%= catTab.title %>
+              </option>
+              <% })%> 
+            </select>
+            
+          </form>
+
           <a href="/tasks/<%= task._id %>/edit" ><button type="submit" class="edit-task">Edit</button></a> 
           <form action="/cats/<%= cat._id %>/remove-task/<%= task._id %>?_method=put" method="post" class="delete-task-form"> 
             <button type="submit" class="delete-task">Remove From List</button>

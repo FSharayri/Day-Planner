@@ -115,6 +115,34 @@ async function removeTaskFromCat(req,res){
   }
 }
 
+
+async function moveTask(req,res){
+  try {
+    const newCat = await Cat.findById(req.body.catId)
+    const oldCat = await Cat.findById(req.params.oldCatId)
+    const task = await Task.findById(req.params.taskId)
+
+    if (task.owner.equals(req.session.user._id) && newCat.owner.equals(req.session.user._id) && oldCat.owner.equals(req.session.user._id)){
+      if (!newCat.taskList.includes(req.params.taskId)){ //checks the new cat doesnt already have that item
+        //add task in new category
+        newCat.taskList.push(req.params.taskId)
+        await newCat.save()
+        //remove task from old category
+        const taskIndex =  await oldCat.taskList.indexOf(req.params.taskId)
+        oldCat.taskList.splice(taskIndex,1)
+        await oldCat.save()
+        res.redirect(`/cats/${oldCat._id}`)
+      }else{
+        res.render('message' ,{message: `this task is Already in ${newCat.title},`, })
+      }
+    }else{
+      res.render('message' ,{message: "you don't have access to this task"})
+    }
+  } catch (error) {
+    console.log(error)
+    res.redirect('/cats')
+  }
+}
 export {
   create,
   newCat as new,
@@ -122,6 +150,7 @@ export {
   show,
   addTask,
   addTaskToCat,
-  removeTaskFromCat
+  removeTaskFromCat,
+  moveTask
 
 }

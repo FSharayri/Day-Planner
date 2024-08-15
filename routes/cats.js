@@ -20,4 +20,6 @@ router.put("/:catId/add-task/:taskId", isSignedIn , catsCtrl.addTaskToCat)
 router.put("/:catId/remove-task/:taskId", isSignedIn , catsCtrl.removeTaskFromCat) 
 
 
+//move task to another cat -protected
+router.put("/:oldCatId/move-task/:taskId", isSignedIn , catsCtrl.moveTask) 
 export { router }
