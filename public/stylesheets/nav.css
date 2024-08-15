@@ -42,16 +42,16 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: #353b3c;
+  color: #C6C7C4;
   padding: 10px 15px;
-  background-color: #938284;
+  background-color: #372727;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   transition: background-color 0.3s ease-in-out;
 }
 
 .navbar-link:hover {
-  background-color: #1153b6;
+  background-color: rgb(201, 185, 186);
 }
 
 /* Style for the Sign Out button */

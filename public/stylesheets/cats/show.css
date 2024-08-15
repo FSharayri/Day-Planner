@@ -2,7 +2,7 @@
 .category-nav {
   display: flex;
   justify-content: space-around;
-  background-color: #846A6A;
+  background-color: #675959;
   padding: 10px;
 }
 
@@ -143,6 +143,6 @@
 
 #cats-tab{
   font-weight: 600;
-  color:#C6C7C4 ;
-  background-color: #372727;
+  color:#353b3c ;
+  background-color: #938284;
 }
