@@ -45,7 +45,8 @@
   color: #353b3c;
   padding: 10px 15px;
   background-color: #938284;
-  border-radius: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -57,7 +58,8 @@
 .sign-out {
   width: 15%;
   height: 100%;
-  background-color: #dc3545;
+  background-color: #98232f;
+  color: #C6C7C4;
 }
 
 .sign-out:hover {

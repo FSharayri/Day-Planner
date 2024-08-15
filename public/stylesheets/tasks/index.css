@@ -104,3 +104,10 @@
 .delete-task-form {
   display: inline;
 }
+
+#tasks-tab{
+  
+  font-weight: 600;
+  color:#C6C7C4 ;
+  background-color: #372727;
+}
