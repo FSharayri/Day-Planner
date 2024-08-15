@@ -1,19 +1,19 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel="stylesheet" href="/stylesheets/flights/index.css" /> -->
+<link rel="stylesheet" href="/stylesheets/cats/show.css" />
 <%- include('../partials/nav') %>
 
-<nav>
-
+<nav class="category-nav">
   <% cats.forEach(catTab => { %>
-    <div>
-          <a href="/cats/<%= catTab._id %>"><%= catTab.title %></a>
+    <div class="category">
+        <a href="/cats/<%= catTab._id %>"><%= catTab.title %></a>
     </div>
   <% })%> 
-
-  <a href="/cats/new"><h3>Add a Category</h3></a>
-
+  
+  <a href="/cats/new" class="add-category">Add a Category</a>
 </nav>
-<main>
+
+<main class="tasks-container">
+  
 
 </main>
 

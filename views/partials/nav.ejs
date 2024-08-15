@@ -2,12 +2,13 @@
   <% if (user) { %>
     <div id="title">
       <h1 class="navbar-title"><%= title %></h1>
+      <a href="/auth/sign-out" class="navbar-link sign-out">Sign out</a>
     </div>
 
     <div class="navbar-links">
-      <a href="/tasks" class="navbar-link">Tasks</a>
       <a href="/cats" class="navbar-link">Categories</a>
-      <a href="/auth/sign-out" class="navbar-link sign-out">Sign out</a>
+      <a href="/tasks" class="navbar-link">Tasks</a>
+      
     </div>
 
   <% } else { %>
