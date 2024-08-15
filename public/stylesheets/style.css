@@ -72,9 +72,3 @@ form.auth {
   gap: 80px;
 
 }
-button{ 
-  color: rgb(255, 255, 255);
-  background-color: rgb(85, 3, 162);
-  border: none;
-  cursor:pointer;
-}

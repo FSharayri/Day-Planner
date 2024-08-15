@@ -8,7 +8,7 @@
     <h1><a href="/tasks/<%= task._id %>"><%= task.title %></a>  
     <h3><%= task.desc %></h3>
     <h2> <%= task.isComplete? "Complete":"Incomplete" %> </h2>
-    <h2><%= task.dueDate.toLocaleDateString() %></h2>
+    <h2><%= task.dueDate %></h2>
     <form action="/cats/<%= cat._id %>/add-task/<%= task._id%>?_method=PUT" method="post"> <button type="submit">➕</button></form></h1>
   <% }) %>
 </main>
