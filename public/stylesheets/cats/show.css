@@ -12,7 +12,7 @@
 
 .category a {
   text-decoration: none;
-  color: #333;
+  color: #EEF0F2;
   padding: 8px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
@@ -30,15 +30,16 @@
 /* Style for the Add Category button */
 .add-category {
   text-decoration: none;
-  color: #fff;
-  background-color: #28a745;
+  color: #EEF0F2;
+  background-color: #585D5E;
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
 }
 
 .add-category:hover {
-  background-color: #218838;
+  background-color: #989c9c;
+  color: #353B3C;
 }
 
 /* Task cards container */
@@ -54,8 +55,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #161925;
-  border: 1px solid #23395B;
+  background-color: #343839;
+  border: 1px solid #232528;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.298);
@@ -63,7 +64,7 @@
 
 .task-title {
   text-decoration: none;
-  color:#CBF7ED;
+  color:#dadada;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
