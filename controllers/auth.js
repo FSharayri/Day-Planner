@@ -27,12 +27,12 @@ async function signUp(req, res) {
 }
 
 function newSignIn(req, res) {
-  res.render('auth/sign-in')
+  res.render('auth/sign-in' , {title: "Sign in to Day Planner"})
 }
 async function signIn(req, res) {
   const userInDatabase = await User.findOne({ username: req.body.username }).select('+password')
   if (!userInDatabase) {
-    return res.send('Login failed. Please try again.')
+    return res.render('message', {message: "Login failed. Please try again."})
   }
   const validPassword = bcrypt.compareSync(
     req.body.password,

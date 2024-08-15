@@ -17,5 +17,7 @@ router.post('/', isSignedIn, catsCtrl.create)
 
 //add a new task to the Category
 router.put("/:catId/add-task/:taskId", isSignedIn , catsCtrl.addTaskToCat) 
+router.put("/:catId/remove-task/:taskId", isSignedIn , catsCtrl.removeTaskFromCat) 
+
 
 export { router }

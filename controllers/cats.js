@@ -93,12 +93,35 @@ async function addTaskToCat(req,res){
   }
 }
 
+async function removeTaskFromCat(req,res){
+  try {
+    const cat = await Cat.findById(req.params.catId)
+    const task = await Task.findById(req.params.taskId)
+    if (task.owner.equals(req.session.user._id) && cat.owner.equals(req.session.user._id)){
+      if (cat.taskList.includes(req.params.taskId)){
+      const taskIndex =  await cat.taskList.indexOf(req.params.taskId)
+      cat.taskList.splice(taskIndex,1)
+      await cat.save()
+      res.redirect(`/cats/${cat._id}`)
+      }else{
+        res.render('message' ,{message: `Error while removing task`, })
+      }
+    }else{
+      res.render('message' ,{message: "you don't have access to this task"})
+    }
+  } catch (error) {
+    console.log(error)
+    res.redirect('/cats')
+  }
+}
+
 export {
   create,
   newCat as new,
   index,
   show,
   addTask,
-  addTaskToCat
+  addTaskToCat,
+  removeTaskFromCat
 
 }

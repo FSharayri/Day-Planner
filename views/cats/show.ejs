@@ -23,7 +23,7 @@
       <h2> <%= task.isComplete? "Complete":"Incomplete" %> ??? </h2>
       
       <a href="/tasks/<%= task._id %>/edit">✏️</a> 
-      <form action="/tasks/<%= task._id %>?_method=DELETE" method="post"> <button type="submit">❌</button></form></h1>
+      <form action="/cats/<%= cat._id %>/remove-task/<%= task._id %>?_method=put" method="post"> <button type="submit">❌</button></form></h1>
     
     <% }) %>
   <% } %>
