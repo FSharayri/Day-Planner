@@ -1,20 +1,29 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/flights/index.css" />
+<link rel="stylesheet" href="/stylesheets/tasks/index.css" />
 <%- include('../partials/nav') %>
 
-<main>
+<main class="task-list-container">
   <h1><%= title %></h1>
-  <a href="/tasks/new"><h1>Add Task</h1></a>
+  <a href="/tasks/new" class="add-task"><h3>Add Task</h3></a>
 
-  
-  <% tasks.forEach(task => { %>
-   <h1><a href="/tasks/<%= task._id %>"><%= task.title %></a>  
-   <h3><%= task.desc %></h3>
-   <h2> <%= task.isComplete? "Complete":"Incomplete" %> </h2>
-   <h2><%= task.dueDate %></h2>
-   <a href="/tasks/<%= task._id %>/edit">✏️</a> 
-   <form action="/tasks/<%= task._id %>?_method=DELETE" method="post"> <button type="submit">❌</button></form></h1>
-  <% }) %>
+  <div class="task-list">
+    <% tasks.forEach(task => { %>
+      <div class="task-card">
+        <div class="task-details">
+          <h1><a href="/tasks/<%= task._id %>" class="task-title"><%= task.title %></a></h1>
+          <h3 class="task-desc"><%= task.desc %></h3>
+          <h2 class="task-status"><%= task.isComplete ? "Complete" : "Incomplete" %></h2>
+          <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
+        </div>
+        <div class="task-actions">
+          <a href="/tasks/<%= task._id %>/edit" class="edit-task">Edit</a>
+          <form action="/tasks/<%= task._id %>?_method=DELETE" method="post" class="delete-task-form">
+            <button type="submit" class="delete-task">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
