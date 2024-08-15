@@ -1,0 +1,44 @@
+/* Style for the navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #413636;
+  padding: 0px 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Style for the title */
+.navbar-title {
+  color: #EEF0F2;
+  font-size: 2.5em;
+}
+
+/* Style for the navigation links container */
+.navbar-links {
+  display: flex;
+  gap: 15px;
+}
+
+/* Style for individual navigation links */
+.navbar-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  background-color: #275DAD;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-link:hover {
+  background-color: #1153b6;
+}
+
+/* Style for the Sign Out button */
+.sign-out {
+  background-color: #dc3545;
+}
+
+.sign-out:hover {
+  background-color: #c82333;
+}
