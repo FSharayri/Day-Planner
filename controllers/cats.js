@@ -190,6 +190,23 @@ async function deleteCat(req,res){
 
 }
 
+async function switchComplete(req,res){
+  try {
+    const task = await Task.findById(req.params.taskId)
+    if (task.owner.equals(req.session.user._id)) {
+      task.isComplete= (task.isComplete? false : true)
+      await task.save()
+      const cat = await Cat.findById(req.params.catId)
+      res.redirect(`/cats/${cat._id}`)
+    } else {
+      res.render('message' ,{message: "you don't have access to modify this Task"})
+    }
+  } catch (error) {
+    console.log(error)
+    res.redirect('/tasks')
+  }
+}
+
 export {
   create,
   newCat as new,
@@ -202,5 +219,5 @@ export {
   edit,
   update,
   deleteCat as delete,
-
+  switchComplete
 }

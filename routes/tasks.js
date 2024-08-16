@@ -24,5 +24,7 @@ router.get('/:taskId/edit', isSignedIn, tasksCtrl.edit)
 router.put('/:taskId', isSignedIn, tasksCtrl.update)
 // move task to Cat
 router.put('/move-task/:taskId', isSignedIn, tasksCtrl.move)
+router.put('/:taskId/complete', isSignedIn, tasksCtrl.switchComplete)
+
 
 export { router }

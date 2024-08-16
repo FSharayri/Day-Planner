@@ -26,6 +26,9 @@
           <h1><a href="/tasks/<%= task._id %>" class="task-title"><%= task.title %></a></h1>
           <h2 class="task-desc"><%= task.desc %></h2>
           <h2 class="task-status"> <%= task.isComplete? "Complete":"Incomplete" %></h2>
+          <form  action="/cats/<%= cat._id %>/task-completed/<%= task._id %>?_method=PUT" method="POST">
+            <button type="submit"><%= task.isComplete ? "Mark as incomplete" : "mark as complete" %></button>
+          </form>
         </div>
         <div class="task-actions">
         

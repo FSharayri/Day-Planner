@@ -28,6 +28,10 @@ router.delete('/:catId', isSignedIn, catsCtrl.delete)
 //move task to another cat -protected
 router.put("/:oldCatId/move-task/:taskId", isSignedIn , catsCtrl.moveTask) 
 
+//mark task completed from cats 
+router.put("/:catId/task-completed/:taskId", isSignedIn , catsCtrl.switchComplete) 
+
+
 
 
 export { router }

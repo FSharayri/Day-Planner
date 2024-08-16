@@ -139,6 +139,21 @@ async function move(req,res){
   }
 }
 
+async function switchComplete(req,res){
+  try {
+    const task = await Task.findById(req.params.taskId)
+    if (task.owner.equals(req.session.user._id)) {
+      task.isComplete= (task.isComplete? false : true)
+      await task.save()
+      res.redirect('/tasks')
+    } else {
+      res.render('message' ,{message: "you don't have access to modify this Task"})
+    }
+  } catch (error) {
+    console.log(error)
+    res.redirect('/tasks')
+  }
+}
 export {
   index,
   show,
@@ -147,6 +162,7 @@ export {
   deleteTask as delete,
   edit,
   update,
-  move
+  move,
+  switchComplete
 
 }
