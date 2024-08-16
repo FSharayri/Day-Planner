@@ -19,7 +19,15 @@ router.post('/', isSignedIn, catsCtrl.create)
 router.put("/:catId/add-task/:taskId", isSignedIn , catsCtrl.addTaskToCat) 
 router.put("/:catId/remove-task/:taskId", isSignedIn , catsCtrl.removeTaskFromCat) 
 
+// edit Cat =protected
+router.get('/:catId/edit', isSignedIn, catsCtrl.edit)
+router.put('/:catId', isSignedIn, catsCtrl.update)
+router.delete('/:catId', isSignedIn, catsCtrl.delete)
+
 
 //move task to another cat -protected
 router.put("/:oldCatId/move-task/:taskId", isSignedIn , catsCtrl.moveTask) 
+
+
+
 export { router }

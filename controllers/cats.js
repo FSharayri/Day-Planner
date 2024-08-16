@@ -47,7 +47,7 @@ async function show(req, res) {
       cat,cats, title: "Categories"
     })
     }else{
-      res.render('message' ,{message: "you don't have access to this task"})
+      res.render('message' ,{message: "you don't have access to this Category"})
     } 
   } catch (error) {
     console.log(error)
@@ -121,7 +121,6 @@ async function moveTask(req,res){
     const newCat = await Cat.findById(req.body.catId)
     const oldCat = await Cat.findById(req.params.oldCatId)
     const task = await Task.findById(req.params.taskId)
-
     if (task.owner.equals(req.session.user._id) && newCat.owner.equals(req.session.user._id) && oldCat.owner.equals(req.session.user._id)){
       if (!newCat.taskList.includes(req.params.taskId)){ //checks the new cat doesnt already have that item
         //add task in new category
@@ -136,13 +135,61 @@ async function moveTask(req,res){
         res.render('message' ,{message: `this task is Already in ${newCat.title},`, })
       }
     }else{
-      res.render('message' ,{message: "you don't have access to this task"})
+      res.render('message' ,{message: "you don't have access to this Category"})
     }
   } catch (error) {
     console.log(error)
     res.redirect('/cats')
   }
 }
+
+async function edit(req,res){
+  try {
+    const cat = await Cat.findById(req.params.catId)
+    if (cat.owner.equals(req.session.user._id)) {
+      res.render('cats/edit', {cat,title: `Edit Category`})
+    }else{
+      res.render('message', {message: "you are not the owner of this category"})
+    }
+  } catch (error) {
+    console.log(error)
+    res.redirect('/cats')
+  }
+}
+
+async function update(req,res){
+  try {
+    const cat = await Cat.findById(req.params.catId)
+    
+    if (cat.owner.equals(req.session.user._id)){
+      cat.title = req.body.title
+      const color = req.body.catColor 
+      await cat.save()
+      res.redirect(`/cats/${cat._id}`)
+    }else{
+      res.render('message' ,{message: "you don't have access to this Category"})
+    }
+  } catch (error) {
+    console.log(error)
+    res.redirect('/cats')
+  }
+}
+async function deleteCat(req,res){
+  try {
+    const cat = await Cat.findById(req.params.catId)
+    if (cat.owner.equals(req.session.user._id)){
+      await cat.deleteOne()
+      cat.save()
+    }else{
+      res.render('message' ,{message: "you don't have access to this Category"})
+    }
+  } catch (error) {
+    console.log(error)
+    res.redirect('/cats')
+  }
+
+}
+
 export {
   create,
   newCat as new,
@@ -151,6 +198,9 @@ export {
   addTask,
   addTaskToCat,
   removeTaskFromCat,
-  moveTask
+  moveTask,
+  edit,
+  update,
+  deleteCat as delete,
 
 }

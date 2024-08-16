@@ -15,6 +15,19 @@
           <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
         </div>
         <div class="task-actions">
+
+          <form action="/tasks/move-task/<%=task._id%>?_method=put" method="post">
+            <label for="cats" style="font-size: 150%;">to Category: </label>
+            <select name="catId" id="cat-select">
+              <% cats.forEach(catTab => { %>
+              <option value="<%= catTab._id %>" >
+                <%= catTab.title %>
+              </option>
+              <% })%> 
+            </select>
+            <button type="submit">Move </button>
+          </form>
+
           <a href="/tasks/<%= task._id %>/edit" class="edit-task">Edit</a>
           <form action="/tasks/<%= task._id %>?_method=DELETE" method="post" class="delete-task-form">
             <button type="submit" class="delete-task">Delete</button>

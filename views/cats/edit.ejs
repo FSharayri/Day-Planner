@@ -4,25 +4,15 @@
 
 <main>
   <h1><%= title %></h1>
-  <form id="new-form" action="/tasks/<%= task._id %>?_method=PUT" method="POST">
-    <label for="title-input">Title:</label>
-    <input type="text" name="title" id="title-input" required value="<%= task.title %>">
-    
-    <label for="desc-input">Description:</label>
-    <input type="text" name="desc" id="desc-input" value="<%= task.desc %>" >
+  <form id="new-form" action="/cats/<%= cat._id %>?_method=PUT" method="POST">
 
-    <label for="is-complete-checkbox">Completed?</label>
-    <input 
-      type="checkbox"
-      name="isComplete"
-      id="is-complete-checkbox"
-      <%= task.isComplete ? "checked" : "" %>
-    >
-    <label for="due-date">Due Date:</label>
-    <input type="datetime-local" name="dueDate" id="due-date"
-     value="<%=date.toISOString().slice(0,16)%>">
-    
+    <label for="title-input">Title:</label>
+    <input type="text" name="title" id="title-input" required value="<%= cat.title %>">
+    <input type="color" name="catColor" >
     <button type="submit">Submit Changes</button>
+  </form>
+  <form  action="/cats/<%= cat._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Category</button>
   </form>
 </main>
 

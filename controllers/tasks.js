@@ -5,7 +5,8 @@ import session from "express-session"
 async function index(req, res) {
   try {
     const tasks = await Task.find({owner : req.session.user._id})
-    res.render('tasks/index',  {tasks, title:"Task List"})
+    const cats = await Cat.find({owner : req.session.user._id})
+    res.render('tasks/index',  {tasks,cats, title:"Task List"})
   } catch (error) {
     console.log(error)
     res.redirect('/')
@@ -112,6 +113,32 @@ async function update(req,res){
     res.redirect('/tasks')
   }
 }
+
+async function move(req,res){
+  try {
+    const cats = await Cat.find({owner : req.session.user._id})
+    const cat = await Cat.findById(req.body.catId)
+    const task = await Task.findById(req.params.taskId)
+    //give access to user only to modify
+    if (task.owner.equals(req.session.user._id) && cat.owner.equals(req.session.user._id)){
+      if (!cat.taskList.includes(req.params.taskId)){
+        cat.taskList.push(req.params.taskId)
+        await cat.save()
+        res.redirect(`/tasks`)
+        }else{
+          res.render('message' ,{message: `this task is Already in ${cat.title},`, })
+        }
+    }
+    else{
+      res.render('message' ,{message: "you don't have access to delete or modify this item"})
+    }
+    
+  } catch (error) {
+    console.log(error)
+    res.redirect('/tasks')
+  }
+}
+
 export {
   index,
   show,
@@ -120,5 +147,6 @@ export {
   deleteTask as delete,
   edit,
   update,
+  move
 
 }

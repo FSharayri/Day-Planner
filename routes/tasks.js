@@ -22,6 +22,7 @@ router.get('/:taskId/edit', isSignedIn, tasksCtrl.edit)
 
 //edit task -protected 
 router.put('/:taskId', isSignedIn, tasksCtrl.update)
-
+// move task to Cat
+router.put('/move-task/:taskId', isSignedIn, tasksCtrl.move)
 
 export { router }
