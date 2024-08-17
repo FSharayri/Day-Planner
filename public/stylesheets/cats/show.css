@@ -2,8 +2,9 @@
 .category-nav {
   display: flex;
   justify-content: space-around;
-  background-color: #675959;
-  padding: 10px;
+  align-items: center;
+  background-color: #1D2D44;
+  padding: 0px;
 }
 
 .category {
@@ -12,34 +13,36 @@
 
 .category a {
   text-decoration: none;
-  color: #EEF0F2;
+  color: #F0EBD8;
   padding: 8px 15px;
-  border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
+  text-wrap:nowrap;
 }
 
 .category a:hover {
-  background-color: #938284;
+  background-color: #3E5C76;
+  color: #0C111E;
 }
 
 .category a.active {
-  background-color: #A2999E;
-  color: #333;
+  background-color: #3E5C76;
+  color: #0C111E;
 }
 
 /* Style for the Add Category button */
 .add-category {
   text-decoration: none;
-  color: #EEF0F2;
-  background-color: #585D5E;
+  color: #0C111E;
+  background-color: #3E5C76;
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
+  text-wrap: nowrap;
 }
 
 .add-category:hover {
-  background-color: #989c9c;
-  color: #353B3C;
+  background-color: #748CAB;
+
 }
 
 /* Task cards container */
@@ -55,38 +58,46 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #343839;
-  border: 1px solid #232528;
+  background-color: #111a2a73;
+  border: 1px solid #0C111E;
+  
+  
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.298);
 }
+.task-card:hover {
+  background-color: #111A2A;
+  transition: background-color 0.5s ease-in-out;
+}
 
 .task-title {
   text-decoration: none;
-  color:#dadada;
+  color:#F0EBD8;
   font-size: 1.5em;
   margin-bottom: 10px;
+  text-wrap: nowrap;
 }
 
-/* .task-title:hover {
+.task-title:hover {
   text-decoration: none;
-  color: rgb(115, 55, 115);
-} */
-.task-details:hover{
-
+  color: #B2BCC2;
 }
+
 .task-desc {
+  max-width: 90%;
   color: #8EA8C3;
   margin-bottom: 10px;
+  text-wrap: pretty;
 }
 
 .task-status {
-  color: #007bff;
+  color: #B2BCC2;
   margin-bottom: 15px;
 }
 
 .task-actions {
+  min-width: 25%;
   width: 25%;
   display: flex;
   flex-direction: column;
@@ -111,11 +122,11 @@
 }
 
 .delete-task {
-  background-color: #752f37;
+  background-color: #5e1118;
 }
 
 .delete-task:hover {
-  background-color: #c82333;
+  background-color: #870d19;
 }
 
 .delete-task-form {
@@ -125,10 +136,10 @@
 .add-task {
   text-align: center;
   text-decoration: none;
-  color: #fff;
+  color: #F0EBD8;
   background-color: transparent;
   padding: 8px 12px;
-  border: 1px solid #28a745;
+  border: 1px solid #3E5C76;
   border-radius: 5px;
   font-size: 1em;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -136,13 +147,13 @@
 }
 
 .add-task:hover {
-  background-color: #28a745;
-  color: #fff;
+  background-color: #3E5C76;
+  color: #F0EBD8;
 }
 
 
 #cats-tab{
   font-weight: 600;
-  color:#353b3c ;
-  background-color: #938284;
+  color:#0C111E ;
+  background-color: #3E5C76;
 }
