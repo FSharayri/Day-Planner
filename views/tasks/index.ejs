@@ -21,7 +21,7 @@
         </div>
         <div class="task-actions">
 
-          <form action="/tasks/move-task/<%=task._id%>?_method=put" method="post">
+          <form action="/tasks/move-task/<%=task._id%>?_method=put" method="post" id="move-task">
             <label for="cats" style="font-size: 150%;">to Category: </label>
             <select name="catId" id="cat-select">
               <% cats.forEach(catTab => { %>
