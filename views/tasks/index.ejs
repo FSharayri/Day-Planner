@@ -33,7 +33,7 @@
             <button type="submit">Move </button>
           </form>
 
-          <a href="/tasks/<%= task._id %>/edit" class="edit-task">Edit</a>
+          <a href="/tasks/<%= task._id %>/edit"><button type="submit" class="edit-task">Edit</button></a>
           <form action="/tasks/<%= task._id %>?_method=DELETE" method="post" class="delete-task-form">
             <button type="submit" class="delete-task">Delete</button>
           </form>
