@@ -6,27 +6,6 @@
   
 }
 
-/* Style for the Add Task button */
-.add-task {
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: transparent;
-  padding: 8px 12px;
-  border: 1px solid #A2999E;
-  border-radius: 5px;
-  font-size: 1em;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.add-task:hover {
-  color: #353B3C;
-  background-color: #A2999E;
-}
-
 /* Task list layout */
 .task-list {
   display: flex;
@@ -35,86 +14,17 @@
 }
 
 /* Individual task card styling */
-.task-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color:#353B3C;
-  border: 1px solid #A2999E;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.task-title {
-  text-decoration: none;
-  color: #846A6A;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-/* .task-title:hover {
-  text-decoration: underline;
-} */
-
-.task-desc {
-  color: #7a5454;
-  margin-bottom: 10px;
-}
-
-.task-status {
-  color: #a58282;
-  margin-bottom: 10px;
-}
 
 .task-due-date {
   color: #999999;
   margin-bottom: 15px;
 }
 
-.task-actions {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  gap: 10px;
-}
 
-.edit-task,
-.delete-task {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-size: 2vw;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 5px;
-}
-
-.edit-task {
-  background-color: #17a2b8;
-  text-decoration: none;
-}
-
-.edit-task:hover {
-  background-color: #138496;
-  text-decoration: none;
-}
-
-.delete-task {
-  background-color: #dc3545;
-}
-
-.delete-task:hover {
-  background-color: #c82333;
-}
-
-.delete-task-form {
-  display: inline;
-}
 
 #tasks-tab{
-  
   font-weight: 600;
-  color:#353b3c ;
-  background-color: #938284;
+  color:#0C111E ;
+  background-color: #3E5C76;
 }

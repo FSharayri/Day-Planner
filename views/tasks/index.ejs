@@ -11,9 +11,9 @@
         <div class="task-details">
           <h1><a href="/tasks/<%= task._id %>" class="task-title"><%= task.title %></a></h1>
           <h3 class="task-desc"><%= task.desc %></h3>
-          <h2 class="task-status"><%= task.isComplete ? "Complete" : "Incomplete" %></h2>
+          <h2 class="task-status" style=" color: <%=task.isComplete?'#1c581a':'#5e1118'%>;" ><%= task.isComplete ? "Complete" : "Incomplete" %></h2>
 
-          <form  action="/tasks/<%= task._id %>/complete?_method=PUT" method="POST">
+          <form  action="/tasks/<%= task._id %>/complete?_method=PUT" method="POST" >
             <a href="javascript:history.back()"></a><button type="submit"><%= task.isComplete ? "Mark as incomplete" : "mark as complete" %></button>
           </form>
 
