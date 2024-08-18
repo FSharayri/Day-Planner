@@ -10,7 +10,7 @@
 .task-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  
 }
 
 /* Individual task card styling */

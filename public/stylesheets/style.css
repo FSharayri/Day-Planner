@@ -120,6 +120,9 @@ button:hover{
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.298);
+  margin: 10px;
+  animation: fadeInUp; 
+  animation-duration: 1s;
 }
 .task-card:hover {
   background-color: #111A2A;
@@ -164,6 +167,7 @@ button:hover{
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+  
 }
 
 .edit-task,
@@ -178,14 +182,19 @@ button:hover{
   padding: 8px 12px;
   border-radius: 5px;
   border: none;
+  animation: pulse; 
+  animation-duration: 1s;
+  animation-delay: 1s;
 }
 
 .edit-task {
   background-color: #275DAD;
+  
 }
 
 .edit-task:hover {
   background-color: #1153b6;
+  
 }
 
 .delete-task {
@@ -224,3 +233,4 @@ button:hover{
 #move-task>label{
 text-wrap: nowrap;
 }
+
