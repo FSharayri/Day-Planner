@@ -34,7 +34,7 @@
         <div class="task-actions">
         
           <form action="/cats/<%=cat._id%>/move-task/<%=task._id%>?_method=put" method="post" id="move-task">
-            <label for="cats" style="font-size: 150%;">to Category: </label>
+            <label for="cats" style="font-size: 150%;">Move to: </label>
             <select name="catId" id="cat-select">
               <% cats.forEach(catTab => { %>
               <option value="<%= catTab._id %>" <%= catTab._id.equals(cat._id)? 'selected':''%>>
@@ -42,7 +42,7 @@
               </option>
               <% })%> 
             </select>
-            <button type="submit">Move </button>
+            <button type="submit">Confirm </button>
           </form>
 
           <a href="/tasks/<%= task._id %>/edit" ><button type="submit" class="edit-task">Edit</button></a> 
