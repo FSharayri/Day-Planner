@@ -41,5 +41,10 @@ form{
   gap: 10px;
 }
 
-
+button{
+  padding: 30px;
+  width: 100%;
+  min-width: 100%;
+  min-height: 30px;
+}
 

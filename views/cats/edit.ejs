@@ -1,18 +1,22 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/form.css">
 
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
   <form id="new-form" action="/cats/<%= cat._id %>?_method=PUT" method="POST">
-
-    <label for="title-input">Title:</label>
-    <input type="text" name="title" id="title-input" required value="<%= cat.title %>">
-    <input type="color" name="catColor" >
+    <div class="new-field">
+      <label for="title-input">Title:</label>
+      <input type="text" name="title" id="title-input" required value="<%= cat.title %>">
+    </div>
+    
+    <!-- <input type="color" name="catColor" > -->
+    
     <button type="submit">Submit Changes</button>
   </form>
   <form  action="/cats/<%= cat._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete Category</button>
+    <button type="submit" class="delete-task">Delete Category</button>
   </form>
 </main>
 

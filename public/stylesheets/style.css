@@ -171,7 +171,7 @@ button:hover{
 }
 
 .edit-task,
-.delete-task {
+.delete-task, .add-task {
 
   width: 100%;
   min-height: 100%;
@@ -234,3 +234,10 @@ button:hover{
 text-wrap: nowrap;
 }
 
+.add-task{
+  background-color: #275DAD;
+  min-height: 100%;
+}
+.add-task:hover {
+  background-color: #1153b6;
+}
