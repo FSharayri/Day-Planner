@@ -1,4 +1,4 @@
-/* Style for the category navigation */
+
 .category-nav {
   display: flex;
   justify-content: space-around;
@@ -30,7 +30,7 @@
   color: #0C111E;
 }
 
-/* Style for the Add Category button */
+
 .add-category {
   text-decoration: none;
   color: #0C111E;

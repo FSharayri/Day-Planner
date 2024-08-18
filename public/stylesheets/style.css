@@ -28,13 +28,9 @@ nav {
   padding-right: 30px;
   padding-bottom: 10px;
   border-bottom: 1px groove ;
-  
 }
 body{
-  
-  /* background-color: rgb(43, 43, 43); */
   color: #F0EBD8;
-  /* Use a system font, if none are available use an available sans-serif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   display: flex;
@@ -43,14 +39,15 @@ body{
   background-color: #0c111e;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%230d1321' fill-opacity='1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+
 form.auth {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
 }
+
 #landing-message{
-  
   padding-top: 100px;
   display: flex;
   flex-direction: column;
@@ -111,6 +108,7 @@ button:hover{
   background-color: #3E5C76;
   color: #F0EBD8;
 }
+
 .task-card {
   display: flex;
   flex-direction: row;
@@ -123,7 +121,9 @@ button:hover{
   margin: 10px;
   animation: fadeInUp; 
   animation-duration: 1s;
+  
 }
+
 .task-card:hover {
   background-color: #111A2A;
   transition: background-color 0.5s ease-in-out;
@@ -141,7 +141,6 @@ button:hover{
 .task-title:hover {
   text-decoration: none;
   color: #B2BCC2;
-  
 }
 
 .task-desc {
@@ -167,15 +166,12 @@ button:hover{
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  
 }
 
 .edit-task,
 .delete-task, .add-task {
-
   width: 100%;
   min-height: 100%;
-  
   text-wrap: nowrap;
   text-decoration: none;
   color: #F0EBD8;
@@ -189,12 +185,10 @@ button:hover{
 
 .edit-task {
   background-color: #275DAD;
-  
 }
 
 .edit-task:hover {
   background-color: #1153b6;
-  
 }
 
 .delete-task {
@@ -218,7 +212,6 @@ button:hover{
   width: 100%;
   max-width: 100%;
   min-width: 25%;
-
 }
 
 #move-task>select{
@@ -240,4 +233,9 @@ text-wrap: nowrap;
 }
 .add-task:hover {
   background-color: #1153b6;
+}
+
+
+.task-details{
+  text-align: left;
 }

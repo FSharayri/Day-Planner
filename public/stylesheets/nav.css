@@ -16,8 +16,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   flex-direction: row;
   justify-content: space-between ;
   align-items: center;
+  animation: fadeIn;
+  animation-duration: 1s;
 }
-/* Style for the title */
+
 .navbar-title {
   color: #F0EBD8;
   font-size: 200%;
@@ -25,7 +27,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   
 }
 
-/* Style for the navigation links container */
+
 .navbar-links {
   width: 100%;
   padding: 0px;
@@ -35,7 +37,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   gap: 15px;
 }
 
-/* Style for individual navigation links */
+
 .navbar-link {
   height: 100%;
   width: 50%;
@@ -58,7 +60,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 }
 
-/* Style for the Sign Out button */
 .sign-out {
   width: 15%;
   height: 100%;

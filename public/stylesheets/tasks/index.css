@@ -1,4 +1,3 @@
-/* Style for the task list container */
 .task-list-container {
   text-align: center;
   padding: 20px;
@@ -6,16 +5,12 @@
   
 }
 
-/* Task list layout */
+
 .task-list {
   display: flex;
   flex-direction: column;
   
 }
-
-/* Individual task card styling */
-
-
 
 
 
