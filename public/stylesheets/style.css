@@ -134,8 +134,8 @@ button:hover{
   color:#F0EBD8;
   font-size: 1.5em;
   margin-bottom: 10px;
-  max-width: 40%;
-  text-wrap: pretty;
+  
+  
 }
 
 .task-title:hover {
@@ -148,6 +148,7 @@ button:hover{
   color: #8EA8C3;
   margin-bottom: 10px;
   text-wrap: pretty;
+  
 }
 
 .task-status {
@@ -228,8 +229,10 @@ text-wrap: nowrap;
 }
 
 .add-task{
-  background-color: #275DAD;
+  background-color: #275cad0d;
   min-height: 100%;
+  
+  border:#1153b6 solid 2px ;
 }
 .add-task:hover {
   background-color: #1153b6;
@@ -238,4 +241,8 @@ text-wrap: nowrap;
 
 .task-details{
   text-align: left;
+}
+.add-task-to-cat{
+  height: 100%;
+  width: 100%;
 }

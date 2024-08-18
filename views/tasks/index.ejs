@@ -16,8 +16,9 @@
           <form  action="/tasks/<%= task._id %>/complete?_method=PUT" method="POST" >
             <a href="javascript:history.back()"></a><button type="submit"><%= task.isComplete ? "Mark as incomplete" : "mark as complete" %></button>
           </form>
-
-          <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
+          <% if (task.dueDate) { %>
+            <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
+          <% } %>
         </div>
         <div class="task-actions">
 

@@ -9,10 +9,13 @@
         <h1 class="task-title"><a href="/tasks/<%= task._id %>" class="task-title"><%= task.title %></a>  
         <h3 class="task-desc"><%= task.desc %></h3>
         <h2 class="task-status"> <%= task.isComplete? "Complete":"Incomplete" %> </h2>
-        <h2 class="task-due-date"><%= task.dueDate %></h2>
+
+        <% if (task.dueDate) { %>
+            <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
+          <% } %>
       </div>
       <div class="task-actions">
-        <form action="/cats/<%= cat._id %>/add-task/<%= task._id%>?_method=PUT" method="post" class="add-task">
+        <form action="/cats/<%= cat._id %>/add-task/<%= task._id%>?_method=PUT" method="post" class="add-task-to-cat">
           <button type="submit" class="add-task">➕</button>
         </form>
       </div>
