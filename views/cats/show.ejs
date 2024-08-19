@@ -19,6 +19,7 @@
 <main class="tasks-container">
   <a href="/cats/<%= cat._id %>/add-task" class="add-task"><h3>Add a task to this Category</h3></a>
   
+  
   <% if (cat.taskList.length) { %>
     <% cat.taskList.forEach(task => { %>
       <div class="task-card" >

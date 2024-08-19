@@ -27,7 +27,7 @@ async function signUp(req, res) {
 }
 
 function newSignIn(req, res) {
-  res.render('auth/sign-in' , {title: "Sign in to Day Planner"})
+  res.render('auth/sign-in' , {title: "Sign in to Dayly"})
 }
 async function signIn(req, res) {
   const userInDatabase = await User.findOne({ username: req.body.username }).select('+password')

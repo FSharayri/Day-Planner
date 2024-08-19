@@ -246,3 +246,13 @@ text-wrap: nowrap;
   height: 100%;
   width: 100%;
 }
+
+#dayly-image{
+  
+    display: inline;
+    max-width:230px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+  
+}

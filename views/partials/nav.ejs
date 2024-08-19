@@ -1,6 +1,8 @@
 <nav class="navbar">
+  
   <% if (user) { %>
     <div id="title">
+      <img src="/img/dayly.png" alt="dayly logo" id="dayly-image">
       <h1 class="navbar-title"><%= title %></h1>
       <a href="/auth/sign-out" class="navbar-link sign-out">Sign out</a>
     </div>
@@ -13,7 +15,8 @@
 
   <% } else { %>
     <div id="title">
-      <h1 class="navbar-title">Day Planner</h1>
+      <img src="/img/dayly.png" alt="dayly logo" id="dayly-image">
+      <h1 class="navbar-title">Dayly</h1>
     </div>
   <% } %>
 </nav>
