@@ -16,12 +16,14 @@ label{
   height: 6vh;
   padding: 10px;
   text-align: center;
+  font-size: 30px;
 }
 #desc-input{
   width: 35vw;
   height: 9vh;
   padding: 20px;
   text-align: center;
+  font-size: 25px;
 }
 
 form{
