@@ -11,8 +11,6 @@
       <input type="text" name="title" id="title-input" required value="<%= cat.title %>">
     </div>
     
-    <!-- <input type="color" name="catColor" > -->
-    
     <button type="submit">Submit Changes</button>
   </form>
   <form  action="/cats/<%= cat._id %>?_method=DELETE" method="POST">

@@ -29,3 +29,7 @@ a{
   text-decoration: none;
   
 }
+#title {
+  justify-content: left ;
+  gap: 40vw;
+}
