@@ -197,7 +197,7 @@ async function switchComplete(req,res){
       task.isComplete= (task.isComplete? false : true)
       await task.save()
       const cat = await Cat.findById(req.params.catId)
-      res.redirect(`/cats/${cat._id}`)
+      res.redirect(`/cats/`)
     } else {
       res.render('message' ,{message: "you don't have access to modify this Task"})
     }
