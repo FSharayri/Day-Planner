@@ -28,7 +28,6 @@ async function create(req,res){
     // refer the task to the logged in user 
     req.body.owner = req.session.user._id
     const task = await Task.create(req.body)
-    const tasks = await Task.find({})
     res.redirect('/tasks')
   } catch (error) {
     console.log(error)
@@ -110,7 +109,6 @@ async function update(req,res){
 
 async function move(req,res){
   try {
-    const cats = await Cat.find({owner : req.session.user._id})
     const cat = await Cat.findById(req.body.catId)
     const task = await Task.findById(req.params.taskId)
     //give access to user only to modify

@@ -29,8 +29,7 @@ async function create(req,res){
     req.body.owner = req.session.user._id
     req.body.taskList = []
     const cat = await Cat.create(req.body)
-    const cats = await Cat.find({owner : req.session.user._id})
-    res.render('cats/index',  {cats, title:"Categories"})
+    res.redirect('/cats')
   } catch (error) {
     console.log(error)
     res.redirect('/cats')
@@ -159,7 +158,6 @@ async function edit(req,res){
 async function update(req,res){
   try {
     const cat = await Cat.findById(req.params.catId)
-    
     if (cat.owner.equals(req.session.user._id)){
       cat.title = req.body.title
       await cat.save()
