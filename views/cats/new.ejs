@@ -4,16 +4,13 @@
 
 <main>
   <h1><%= title %></h1>
-
   <form id="new-form" action="/cats" method="POST">
     <div class="new-field">
       <label for="title-input">Title:</label>
       <input type="text" name="title" id="title-input" required >
     </div>
-    
     <button type="submit" >Create Category</button>
   </form>
-
 </main>
 
 <%- include('../partials/footer') %>

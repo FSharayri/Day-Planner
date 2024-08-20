@@ -2,14 +2,12 @@
 <%- include('../partials/nav') %>
 
 <main class="task-card" >
-<h1 class="task-title"><%= task.title %></h1>
-<h2 class="task-desc"><%= task.desc %></h2>
-<h2 class="task-status" style=" color: <%=task.isComplete?'#1c581a':'#5e1118'%>;" ><%= task.isComplete ? "Complete" : "Incomplete" %></h2>
-
-<% if (task.dueDate) { %>
-  <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
-<% } %>
-
+  <h1 class="task-title"><%= task.title %></h1>
+  <h2 class="task-desc"><%= task.desc %></h2>
+  <h2 class="task-status" style=" color: <%=task.isComplete?'#1c581a':'#5e1118'%>;" ><%= task.isComplete ? "Complete" : "Incomplete" %></h2>
+  <% if (task.dueDate) { %>
+    <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
+  <% } %>
 </main>
 <a href="/tasks"><button type="submit" class="edit-task">Back</button></a>
 

@@ -19,7 +19,6 @@
 <main class="tasks-container">
   <a href="/cats/<%= cat._id %>/add-task" class="add-task"><h3>Add a task to this Category</h3></a>
   
-  
   <% if (cat.taskList.length) { %>
     <% cat.taskList.forEach(task => { %>
       <div class="task-card" >
@@ -35,7 +34,6 @@
           <% } %>
         </div>
         <div class="task-actions">
-        
           <form action="/cats/<%=cat._id%>/move-task/<%=task._id%>?_method=put" method="post" id="move-task">
             <label for="cats" style="font-size: 150%;">Move to: </label>
             <select name="catId" id="cat-select">
@@ -47,7 +45,6 @@
             </select>
             <button type="submit">Confirm </button>
           </form>
-
           <a href="/tasks/<%= task._id %>/edit" ><button type="submit" class="edit-task">Edit</button></a> 
           <form action="/cats/<%= cat._id %>/remove-task/<%= task._id %>?_method=put" method="post" class="delete-task-form"> 
             <button type="submit" class="delete-task">Remove From List</button>

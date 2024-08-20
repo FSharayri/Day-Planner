@@ -5,16 +5,13 @@
 <nav class="category-nav">
   <% cats.forEach(catTab => { %>
     <div class="category">
-        <a href="/cats/<%= catTab._id %>"><%= catTab.title %></a>
+      <a href="/cats/<%= catTab._id %>"><%= catTab.title %></a>
     </div>
   <% })%> 
-  
   <a href="/cats/new" class="add-category">Add a Category</a>
 </nav>
 
 <main class="tasks-container">
-  
-
 </main>
 
 <%- include('../partials/footer') %>

@@ -1,6 +1,5 @@
 import { Task } from "../models/task.js"
 import { Cat } from "../models/cat.js"
-import session from "express-session"
 
 async function index(req, res) {
   try {
@@ -15,7 +14,6 @@ async function index(req, res) {
 
 async function newTask(req,res){
   try {
- 
     res.render('tasks/new',  { title:"Create Task"})
   } catch (error) {
     console.log(error)
@@ -40,16 +38,14 @@ async function create(req,res){
 async function show(req, res) {
   try {
     const task = await Task.findById(req.params.taskId)
-    
     if (task.owner.equals(req.session.user._id)){
-    res.render('tasks/show', {
-      task, title: "Task Details"
+      res.render('tasks/show', {
+        task, title: "Task Details"
     })
     }else{
       res.render('message' ,{message: "you don't have access to view this task"})
     }
-    
-  } catch (error) {
+  }catch (error) {
     console.log(error)
     res.redirect('/')
   }
@@ -59,8 +55,6 @@ async function show(req, res) {
 async function deleteTask(req,res){
   try {
     const task = await Task.findById(req.params.taskId)
-    console.log(task.owner)
-    console.log(req.session.user._id)
     if (task.owner.equals(req.session.user._id)){
       await Task.findByIdAndDelete(req.params.taskId)
       res.redirect('/tasks')
@@ -82,7 +76,7 @@ async function edit(req,res){
     let date = new Date(task.dueDate - new Date().getTimezoneOffset() * 60000)
     //give access to user only to modify
     if (task.owner.equals(req.session.user._id)){
-    res.render('tasks/edit', {task ,date, title : 'Edit Task'})
+      res.render('tasks/edit', {task ,date, title : 'Edit Task'})
     }else{
       res.render('message' ,{message: "you don't have access to delete or modify this item"})
     }

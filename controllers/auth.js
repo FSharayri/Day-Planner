@@ -8,7 +8,6 @@ function newSignUp(req, res) {
 async function signUp(req, res) {
   const userInDatabase = await User.findOne({ username: req.body.username })
   if (userInDatabase) {
-    
     return res.render('message', {message: "this username is taken"})
   }
   if (req.body.password !== req.body.confirmPassword) {

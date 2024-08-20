@@ -1,6 +1,5 @@
 import { Task } from "../models/task.js"
 import { Cat } from "../models/cat.js"
-import session from "express-session"
 
 async function index(req, res) {
   try {
@@ -43,8 +42,8 @@ async function show(req, res) {
     const cat = await Cat.findById(req.params.catId).populate(['taskList'])
     const cats = await Cat.find({owner : req.session.user._id})
     if (cat.owner.equals(req.session.user._id)){
-    res.render('cats/show', {
-      cat,cats, title: "Categories"
+      res.render('cats/show', {
+        cat,cats, title: "Categories"
     })
     }else{
       res.render('message' ,{message: "you don't have access to this Category"})
@@ -78,9 +77,9 @@ async function addTaskToCat(req,res){
     const task = await Task.findById(req.params.taskId)
     if (task.owner.equals(req.session.user._id) && cat.owner.equals(req.session.user._id)){
       if (!cat.taskList.includes(req.params.taskId)){
-      cat.taskList.push(req.params.taskId)
-      await cat.save()
-      res.redirect(`/cats/${cat._id}`)
+        cat.taskList.push(req.params.taskId)
+        await cat.save()
+        res.redirect(`/cats/${cat._id}`)
       }else{
         res.render('message' ,{message: `this task is Already in ${cat.title},`, })
       }
@@ -99,10 +98,10 @@ async function removeTaskFromCat(req,res){
     const task = await Task.findById(req.params.taskId)
     if (task.owner.equals(req.session.user._id) && cat.owner.equals(req.session.user._id)){
       if (cat.taskList.includes(req.params.taskId)){
-      const taskIndex =  await cat.taskList.indexOf(req.params.taskId)
-      cat.taskList.splice(taskIndex,1)
-      await cat.save()
-      res.redirect(`/cats/${cat._id}`)
+        const taskIndex =  await cat.taskList.indexOf(req.params.taskId)
+        cat.taskList.splice(taskIndex,1)
+        await cat.save()
+        res.redirect(`/cats/${cat._id}`)
       }else{
         res.render('message' ,{message: `Error while removing task`, })
       }
@@ -137,7 +136,7 @@ async function moveTask(req,res){
     }else{
       res.render('message' ,{message: "you don't have access to this Category"})
     }
-  } catch (error) {
+  }catch (error) {
     console.log(error)
     res.redirect('/cats')
   }
@@ -163,7 +162,6 @@ async function update(req,res){
     
     if (cat.owner.equals(req.session.user._id)){
       cat.title = req.body.title
-      const color = req.body.catColor 
       await cat.save()
       res.redirect(`/cats/${cat._id}`)
     }else{

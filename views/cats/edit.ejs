@@ -10,7 +10,6 @@
       <label for="title-input">Title:</label>
       <input type="text" name="title" id="title-input" required value="<%= cat.title %>">
     </div>
-    
     <button type="submit">Submit Changes</button>
   </form>
   <form  action="/cats/<%= cat._id %>?_method=DELETE" method="POST">

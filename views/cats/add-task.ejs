@@ -11,8 +11,8 @@
         <h2 class="task-status"> <%= task.isComplete? "Complete":"Incomplete" %> </h2>
 
         <% if (task.dueDate) { %>
-            <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
-          <% } %>
+          <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
+        <% } %>
       </div>
       <div class="task-actions">
         <form action="/cats/<%= cat._id %>/add-task/<%= task._id%>?_method=PUT" method="post" class="add-task-to-cat">
@@ -20,7 +20,7 @@
         </form>
       </div>
     </div>
-    <% }) %>
+  <% }) %>
 </main>
 
 <%- include('../partials/footer') %>
