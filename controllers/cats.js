@@ -27,7 +27,7 @@ async function create(req,res){
     //anytime the user creates a task it should to be incomplete by default
     // refer the task to the logged in user 
     req.body.owner = req.session.user._id
-    req.body.taskList = []
+    
     const cat = await Cat.create(req.body)
     res.redirect('/cats')
   } catch (error) {

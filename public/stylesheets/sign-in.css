@@ -33,3 +33,7 @@ a{
   justify-content: left ;
   gap: 40vw;
 }
+
+input, button{
+  font-size: 25px;
+}

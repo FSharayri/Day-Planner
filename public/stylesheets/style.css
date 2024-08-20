@@ -213,25 +213,37 @@ button:hover{
   width: 100%;
   max-width: 100%;
   min-width: 25%;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #move-task>select{
   background-color: #748CAB;
   color: #0C111E;
+  padding: 10px;
+  font-size: inherit;
+  font-weight: bold;
+
 }
 
 #move-task>button{
   border: none;
-  width: inherit
+  width: inherit;
+  font-size: inherit;
+  font-weight: bold;
+
 }
 #move-task>label{
 text-wrap: nowrap;
+align-items: center;
+font-size: 10px;
+font-weight: normal;
 }
 
 .add-task{
   background-color: #275cad0d;
   min-height: 100%;
-  
+  font-size: 15px;
   border:#1153b6 solid 2px ;
 }
 .add-task:hover {

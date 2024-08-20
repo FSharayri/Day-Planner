@@ -21,12 +21,12 @@
 }
 
 .category a:hover {
-  background-color: #3E5C76;
+  background-color: #6587a4;
   color: #0C111E;
 }
 
 .category a.active {
-  background-color: #3E5C76;
+  background-color: #6587a4;
   color: #0C111E;
 }
 
@@ -34,7 +34,7 @@
 .add-category {
   text-decoration: none;
   color: #0C111E;
-  background-color: #3E5C76;
+  background-color: #5a92c3;
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
@@ -55,5 +55,5 @@
 #cats-tab{
   font-weight: 600;
   color:#0C111E ;
-  background-color: #3E5C76;
+  background-color: #6587a4;
 }
