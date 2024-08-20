@@ -11,7 +11,7 @@
         <h2 class="task-status"> <%= task.isComplete? "Complete":"Incomplete" %> </h2>
 
         <% if (task.dueDate) { %>
-          <h2 class="task-due-date">Due: <%= task.dueDate %></h2>
+          <h2 class="task-due-date">Due Date: <%= task.dueDate.toLocaleDateString()%>  @ <%= task.dueDate.toLocaleTimeString()%> </h2>
         <% } %>
       </div>
       <div class="task-actions">
